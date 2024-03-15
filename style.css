@@ -223,12 +223,12 @@ color: #9495a5;
 }
 
 
-@media screen and (max-width: 414px) {
+@media screen and (max-width: 375px) {
 
     .bg {
         background-image: url(./images/bg-mobile-light.jpg);
         background-repeat: no-repeat;
-        width: 414px;
+        width: 375px;
         height: 200px;
         padding: 48px 24px 132px 26px;
     }

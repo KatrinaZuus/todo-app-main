@@ -7,10 +7,9 @@
 }
 
 body {
-    max-width: 1440px;    
-    width: 100vw;
+    max-width: 1440px;
     background-color: #fafafa;
-    height: 100vh;
+    /* height: 100vh; */
     font-family: Josefin Sans;
 }
 
@@ -18,9 +17,9 @@ body {
     display: none;
 }
 
-.desktop-light {
+/* .desktop-light {
     width: 100vw;
-}
+} */
 .title {
     position: relative;
     display: flex;
@@ -69,7 +68,7 @@ body {
 }
 
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 377px) {
     
     .desktop-light{
             display: none;

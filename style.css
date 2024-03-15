@@ -7,20 +7,26 @@
 }
 
 body {
-    max-width: 1440px;
+    /* max-width: 1440px; */
     background-color: #fafafa;
-    /* height: 100vh; */
+    width: 100vw;
+    height: 100vh;
     font-family: Josefin Sans;
+    overflow: hidden;
 }
+
+
 
 .mobile-dark, .desktop-dark, .mobile-light {
     display: none;
 }
 
 /* .desktop-light {
-    width: 100vw;
+    width: 1700px;
 } */
+
 .title {
+    /* width: 1700px; */
     position: relative;
     display: flex;
     gap: 169px;
@@ -68,18 +74,20 @@ body {
 }
 
 
-@media screen and (max-width: 377px) {
+@media screen and (max-width: 376px) {
     
     .desktop-light{
             display: none;
         }
+
     .mobile-light {
         display: block;
-    
     }
+    
     #sun{
         display: block;
     }
+
     #moon {
         display: none;
     }

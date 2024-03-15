@@ -7,29 +7,23 @@
 }
 
 body {
-    /* max-width: 1440px; */
+    max-width: 1440px;
     background-color: #fafafa;
-    width: 100vw;
-    height: 100vh;
     font-family: Josefin Sans;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
-
-
-.mobile-dark, .desktop-dark, .mobile-light {
-    display: none;
-}
-
-/* .desktop-light {
-    width: 1700px;
-} */
-
-.title {
-    /* width: 1700px; */
-    position: relative;
+.bg {
+    background-image: url(./images/bg-desktop-light.jpg);
+    background-repeat: no-repeat;
+    width: 1440px;
+    height: 300px;
     display: flex;
-    gap: 169px;
+    padding: 70px 449px 190px 450px;
+}
+.title {
+    display: flex;
+    gap: 348px
 }
 
 #sun{
@@ -37,58 +31,290 @@ body {
 }
 
 .title h1 {
-    position: absolute;
     color: #fff;
     letter-spacing: 10px;
     font-weight: 800;
 }
 
-.Rectangle-Copy-2 {
-    width: 12px;
-    height: 12px;
-    flex-grow: 0;
-    margin: 3.9px 0.1px 4.1px 126.9px;
-    transform: rotate(-45deg);
-    /* border: solid 1px #979797;
-    background-color: #d8d8d8; */
+.rectangle{
+    width: 540px;
+    height: 64px;
+    position: absolute;
+    top: 158px;
+    left: 450px;
+    padding: 23px 24px 24px 24px;
+    border-radius: 5px;
+    box-shadow: 0 35px 50px -15px rgba(194, 195, 214, 0.5);
+    background-color: #fff;
+    display: flex;
+    align-items: center;
   }
 
-  .oval {
-    width: 20px;
-    height: 20px;
-    border-radius: 50px;
-    background-image: url(./images/icon-check.svg);
+
+.oval {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
     background-repeat: no-repeat;
-    background-color: red;
+    border: solid 1px #e3e4f1;
+    /* background-color: red; */
+}
+
+.check {
+    position: absolute;
+    top: 3.5px;
+    left: 3.5px;
+    width: 15px;
+    height: 15px;
+}
+
+.cross {
+    display: none;
+    width: 18px;
+    height: 18px;
+
 }
 
 .create-a-new-todo {
+    width: 183px;
+    height: 24px;
     border: none;
-    background-color: green;
+    margin-left: 24px;
+    margin-right: 243px;
+    /* background-color: aqua; */
+    font-size: 18px;
+    letter-spacing: -0.25px;
 }
 
+ახალი რომ დაემატება color-ს ფერი მიეცეს
 .line {
+    /* display: none; */
+    position: absolute;
+    width: 540px;
     height: 1px;
-    background-color: #e3e4f1;
+    top: 64px;
+    left: 1px;
+    background-color: none;
+    /* background-color: #e3e4f1; */
+}
 
+/* ახალი რომ დაემატება ჩრდილი გააქტიურდეს */
+.list-of-todo {
+    position: absolute;
+    width: 540px;
+    height: 375px;
+    top: 246px;
+    margin-left: 450px;
+    color: #9495a5;
+    /* box-shadow: 0 35px 50px -15px rgba(194, 195, 214, 0.5); */
+    /* background-color: bisque; */
+}
+
+/* რამდენიც დაემატება, იმდენჯერ top-ს უნდა დაემატოს 65px */
+
+.rectangle2{
+    width: 540px;
+    height: 64px;
+    position: absolute;
+    padding: 23px 24px 24px 24px;
+    border-radius: 5px;
+    box-shadow: 0 35px 50px -15px rgba(194, 195, 214, 0.5);
+    background-color:aqua;
+    display: flex;
+    align-items: center;
+  }
+
+  .rectangle3{
+    width: 540px;
+    height: 64px;
+    position: absolute;
+    padding: 23px 24px 24px 24px;
+    border-radius: 5px;
+    box-shadow: 0 35px 50px -15px rgba(194, 195, 214, 0.5);
+    background-color:aqua;
+    display: flex;
+    align-items: center;
+    top:65px
+  }
+
+  .rectangle4{
+    width: 540px;
+    height: 64px;
+    position: absolute;
+    padding: 23px 24px 24px 24px;
+    border-radius: 5px;
+    box-shadow: 0 35px 50px -15px rgba(194, 195, 214, 0.5);
+    background-color:aqua;
+    display: flex;
+    align-items: center;
+    top:130px
+  }
+
+  .rectangle5{
+    width: 540px;
+    height: 64px;
+    position: absolute;
+    padding: 23px 24px 24px 24px;
+    border-radius: 5px;
+    box-shadow: 0 35px 50px -15px rgba(194, 195, 214, 0.5);
+    background-color:aqua;
+    display: flex;
+    align-items: center;
+    top:195px
+  }
+
+  .rectangle6{
+    width: 540px;
+    height: 64px;
+    position: absolute;
+    padding: 23px 24px 24px 24px;
+    border-radius: 5px;
+    box-shadow: 0 35px 50px -15px rgba(194, 195, 214, 0.5);
+    background-color:aqua;
+    display: flex;
+    align-items: center;
+    top:260px
+  }
+
+.left-clear {
+    position: absolute;
+    padding: 16px 24px 20px 24px;
+    width: 540px;
+    height: 50px;
+    display: flex;
+    background-color: #ffffff;
+    border-radius: 0 0 5px 5px;
+    top: 325px;
+    font-size: 14px;
+    letter-spacing: -0.19px;
+}
+
+.left {
+    margin-left: 5px;
+}
+
+.all-active-completed {
+display: flex;
+margin-left: 96px;
+margin-right: 56px;
+gap: 19px;
+font-weight: bold;
+
+color: #9495a5;
+}
+
+.all {
+    color: #3a7cfd;
+}
+
+.reorder {
+    width: 540px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    /* align-self: last baseline; */
+    text-align: center;
+    bottom: 52px;
+    left: 445px;
+    font-size: 14px;
+    letter-spacing: -0.19px;
+    color: #9495a5;
 }
 
 
 @media screen and (max-width: 376px) {
-    
-    .desktop-light{
-            display: none;
-        }
 
-    .mobile-light {
-        display: block;
-    }
-    
-    #sun{
-        display: block;
+    .bg {
+        background-image: url(./images/bg-mobile-light.jpg);
+        background-repeat: no-repeat;
+        width: 375px;
+        height: 200px;
+        padding: 48px 24px 132px 26px;
     }
 
-    #moon {
-        display: none;
+    .title {
+        display: flex;
+        gap: 150px
+    }
+
+    .rectangle {
+        width: 327px;
+        height: 50px;
+        top: 108px;
+        left: 24px;
+        padding: 18px 20px;
+    }
+
+    .oval {
+        width: 20px;
+        height: 20px;
+    } 
+
+    .check {
+    position: absolute;
+    top: 5px;
+    left: 5.2px;
+    width: 8px;
+    height: 8px;
+    } 
+
+    .create-a-new-todo {
+        width: 122px;
+        height: 12px;
+        margin-left: 12px;
+        margin-right: 120px;
+        font-size: 12px;
+        letter-spacing: -0.17;
+    }
+
+    .cross {
+        width: 12px;
+        height: 12px;
+    }
+
+    .line {
+        width: 327px;
+    }
+
+    .list-of-todo {
+        width: 327px;
+        height: 350px;
+        top: 172px;
+        margin-left: 24px;
+        color: #9495a5;
+        /* background-color: bisque; */
+    }
+
+    .left-clear {
+        width: 327px;
+        padding: 16px 20px 22px 20px;
+        height: 50px;
+        top: 300px;
+        font-size: 12px;
+        letter-spacing: -0.17px;
+    }
+
+    .left {
+        margin-right: 138px;
+    }
+
+    .all-active-completed {
+        width: 327px;
+        height: 50px;
+        position: absolute;
+        left: -95px;
+        top: 66px;
+        background-color: #ffffff;
+        padding: 15px 80px 19px 81px;
+        box-shadow: 0 35px 50px -15px rgba(194, 195, 214, 0.5);
+    }
+
+
+    .reorder {
+        width: 327px;
+        bottom: 22px;
+        left: 30px;
+        /* transform: translate(-60%); */
     }
 }

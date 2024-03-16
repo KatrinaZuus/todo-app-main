@@ -8,9 +8,15 @@
 
 body {
     max-width: 1440px;
-    background-color: #fafafa;
     font-family: Josefin Sans;
+    height: 100vh;
     /* overflow: hidden; */
+}
+
+.container {
+    background-color: #fafafa;
+    width: 1440px;
+    height: 100%;
 }
 
 .bg {
@@ -23,17 +29,25 @@ body {
 }
 .title {
     display: flex;
-    gap: 348px
+    gap: 290px
 }
 
-#sun{
+
+
+.sun {
     display: none;
+}
+
+
+.moon:hover {
+    cursor: pointer;
 }
 
 .title h1 {
     color: #fff;
     letter-spacing: 10px;
     font-weight: 800;
+    font-size: 60px;
 }
 
 .rectangle{
@@ -61,6 +75,12 @@ body {
     /* background-color: red; */
 }
 
+/* ეს ჰოვერი დაედოს დამატებულზე */
+/* .oval:hover { */
+    /* cursor: pointer; */
+    /* border-color: #5df; */
+/* } */
+
 .check {
     position: absolute;
     top: 3.5px;
@@ -87,7 +107,12 @@ body {
     letter-spacing: -0.25px;
 }
 
-ახალი რომ დაემატება color-ს ფერი მიეცეს
+/* ეს ჰოვერი დაედოს დამატებულზე */
+/* .create-a-new-todo { */
+    /* cursor: pointer; */
+/* } */
+
+/* ახალი რომ დაემატება color-ს ფერი მიეცეს */
 .line {
     /* display: none; */
     position: absolute;
@@ -113,7 +138,7 @@ body {
 
 /* რამდენიც დაემატება, იმდენჯერ top-ს უნდა დაემატოს 65px */
 
-.rectangle2{
+/* .rectangle2{
     width: 540px;
     height: 64px;
     position: absolute;
@@ -175,7 +200,7 @@ body {
     display: flex;
     align-items: center;
     top:260px
-  }
+  } */
 
 .left-clear {
     position: absolute;
@@ -183,7 +208,7 @@ body {
     width: 540px;
     height: 50px;
     display: flex;
-    background-color: #ffffff;
+    background-color: #fff;
     border-radius: 0 0 5px 5px;
     top: 325px;
     font-size: 14px;
@@ -200,12 +225,16 @@ margin-left: 96px;
 margin-right: 56px;
 gap: 19px;
 font-weight: bold;
-
 color: #9495a5;
 }
 
 .all {
     color: #3a7cfd;
+}
+
+.all, .active, 
+.completed, .clear-completed:hover{
+cursor: pointer;
 }
 
 .reorder {
@@ -215,16 +244,56 @@ color: #9495a5;
     justify-content: center;
     /* align-self: last baseline; */
     text-align: center;
-    bottom: 52px;
+    top: 680px;
     left: 445px;
     font-size: 14px;
     letter-spacing: -0.19px;
     color: #9495a5;
 }
 
+/* dark mode */
+
+
+.dark .container {
+    background-color: #171823;
+}
+
+.dark .bg {
+    background-image: url(./images/bg-desktop-dark.jpg);
+} 
+
+.dark .rectangle, 
+.dark .left-clear,
+.dark .create-a-new-todo {
+    background-color: #25273d;
+}
+
+.dark .oval {
+    border:solid 1px #393a4b
+}
+
+.dark .check {
+    display: none
+}
+.dark .moon {
+    display:none;
+}
+
+.dark .sun {
+    display: block;
+}
+
+
+
+
+
 
 @media screen and (max-width: 375px) {
 
+    .container {
+        width: 375px;
+        /* height: 933px; */
+    }
     .bg {
         background-image: url(./images/bg-mobile-light.jpg);
         background-repeat: no-repeat;
@@ -233,9 +302,19 @@ color: #9495a5;
         padding: 48px 24px 132px 26px;
     }
 
+    .bg #dark-bg {
+        display: none;
+        background-image: url(./images/bg-mobile-dark.jpg);
+    }
+
     .title {
         display: flex;
-        gap: 150px
+        gap: 170px
+    }
+
+    .title h1 {
+        
+    font-size: 30px;
     }
 
     .rectangle {
@@ -309,8 +388,6 @@ color: #9495a5;
         padding: 15px 80px 19px 81px;
         box-shadow: 0 35px 50px -15px rgba(194, 195, 214, 0.5);
     }
-
-
     .reorder {
         width: 327px;
         bottom: 22px;

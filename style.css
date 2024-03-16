@@ -186,11 +186,12 @@ body {
     border-radius: 50%;
     background-repeat: no-repeat;
     border: solid 1px #e3e4f1;
-    margin-left: -475px 
+    margin-left: -475px;
 }
 
     .todooval:hover {
         cursor: pointer;
+        border: solid 1px #c058f3;
 }
 
 

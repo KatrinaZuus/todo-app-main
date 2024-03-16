@@ -26,7 +26,7 @@ let i = 1
 inputField.addEventListener('keypress', function (e) {
   
     
-    if (e.key === 'Enter' && i===5) {
+    if (e.key === 'Enter' && i===5 && inputField.value !== "") {
         todoadd = document.createElement(`div`)
         todoadd.classList.add("todo5") 
         listOfTodo.appendChild(todoadd)
@@ -54,7 +54,7 @@ inputField.addEventListener('keypress', function (e) {
         itemsQty.innerText = i
         i=i+1   
      } 
-     if (e.key === 'Enter' && i===4) {
+     if (e.key === 'Enter' && i===4 && inputField.value !== "") {
         todoadd = document.createElement(`div`)
         todoadd.classList.add("todo4") 
         listOfTodo.appendChild(todoadd)
@@ -83,7 +83,7 @@ inputField.addEventListener('keypress', function (e) {
         i=i+1
      } 
 
-     if (e.key === 'Enter' && i===3) {
+     if (e.key === 'Enter' && i===3 && inputField.value !== "") {
         todoadd = document.createElement(`div`)
         todoadd.classList.add("todo3") 
         listOfTodo.appendChild(todoadd)
@@ -112,7 +112,7 @@ inputField.addEventListener('keypress', function (e) {
         i=i+1
      } 
 
-     if (e.key === 'Enter' && i===2) {
+     if (e.key === 'Enter' && i===2 && inputField.value !== "") {
         todoadd = document.createElement(`div`)
         todoadd.classList.add("todo2") 
         listOfTodo.appendChild(todoadd)
@@ -141,7 +141,7 @@ inputField.addEventListener('keypress', function (e) {
         i=i+1 
      } 
 
-     if (e.key === 'Enter' && i===1) {
+     if (e.key === 'Enter' && i===1 && inputField.value !== "") {
         todoadd = document.createElement(`div`)
         todoadd.classList.add("todo1") 
         listOfTodo.appendChild(todoadd)
@@ -173,20 +173,126 @@ inputField.addEventListener('keypress', function (e) {
         i=i+1
      } 
 
-    })
-
-
-    todooval = Array.from(document.getElementsByClassName("todooval"))
-     todocheck = document.querySelector(".todocheck")
-     todooval.forEach((event) => {
-         event.addEventListener("click", ()=>{
-             todocheck.style.display = "block"
-         })
-         
-     });
-
+     newoval = Array.from(document.querySelectorAll(".todooval"))
+     checked = document.querySelectorAll(".todocheck")
+     console.log(newoval[0])
+    // ამ ფერზე ვერ დავსვი
+    // `linear-gradient (135deg, #5df, #c058f3)` 
 
     
+     
     
+    let  checkedone = 0   
+    one = newoval[0]
+    
+    one.addEventListener("click", ()=>{
+        if (checkedone == 1){
+        one.style.backgroundColor = "#fff"
+        checkedone = 0
+            } else {
+                
+        if (checkedone == 0){
+            one.style.backgroundColor = "#c058f3"
+            // todotext.style.textDecoration = "none"
+            checkedone = 1                 
+            }
+        }
+        })
+
+    
+    let  checkedtwo = 0   
+    two = newoval[1]
+    
+    two.addEventListener("click", ()=>{
+        if (checkedtwo == 1){
+        two.style.backgroundColor = "#fff"
+        // two.style.textDecoration = "underline"
+        checkedtwo = 0
+            } else {
+                
+        if (checkedtwo == 0){
+            two.style.backgroundColor = "#c058f3"
+            // two.style.textDecoration = "none"
+            checkedtwo = 1                 
+            }
+        }
+        })
+
+    let  checkedthree = 0   
+    three = newoval[2]
+    
+    three.addEventListener("click", ()=>{
+        if (checkedthree == 1){
+        three.style.backgroundColor = "#fff"
+        // three.style.textDecoration = "underline"
+            } else {
+                
+        if (checkedthree == 0){
+            three.style.backgroundColor = "#c058f3"
+            // three.style.textDecoration = "none"
+            checkedthree = 1                 
+            }
+        }
+        })
+
+
+    let  checkedfour = 0   
+    four = newoval[3]
+        
+    four.addEventListener("click", ()=>{
+        if (checkedfour == 1){
+        four.style.backgroundColor = "#fff"
+        // four.style.textDecoration = "underline"
+            } else {
+                    
+        if (checkedfour == 0){
+            four.style.backgroundColor = "#c058f3"
+            // four.style.textDecoration = "none"
+            checkedfour = 1                 
+            }
+            }
+            })
+
+        
+               
+    let  checkedfive = 0   
+        five = newoval[4]
+            
+        five.addEventListener("click", ()=>{
+            if (checkedfive == 1){
+            five.style.backgroundColor = "#fff"
+            // five.style.textDecoration = "underline"
+                } else {
+                        
+            if (checkedfive == 0){
+                five.style.backgroundColor = "#c058f3"
+                // five.style.textDecoration = "none"
+                checkedfive = 1                 
+                }
+            }
+            })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            })
+
+
+
+
+
+
+       
      
 

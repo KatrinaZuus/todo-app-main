@@ -10,7 +10,6 @@ body {
     max-width: 1440px;
     font-family: Josefin Sans;
     height: 100vh;
-    /* overflow: hidden; */
 }
 
 .container {
@@ -72,14 +71,7 @@ body {
     border-radius: 50%;
     background-repeat: no-repeat;
     border: solid 1px #e3e4f1;
-    /* background-color: red; */
 }
-
-/* ეს ჰოვერი დაედოს დამატებულზე */
-/* .oval:hover { */
-    /* cursor: pointer; */
-    /* border-color: #5df; */
-/* } */
 
 .check {
     position: absolute;
@@ -90,10 +82,8 @@ body {
 }
 
 .cross {
-    display: none;
     width: 18px;
     height: 18px;
-
 }
 
 .create-a-new-todo {
@@ -106,6 +96,7 @@ body {
     font-size: 18px;
     letter-spacing: -0.25px;
 }
+
 
 /* ეს ჰოვერი დაედოს დამატებულზე */
 /* .create-a-new-todo { */
@@ -138,69 +129,85 @@ body {
 
 /* რამდენიც დაემატება, იმდენჯერ top-ს უნდა დაემატოს 65px */
 
-/* .rectangle2{
+.todo1, .todo2, .todo3, .todo4, .todo5{
     width: 540px;
     height: 64px;
     position: absolute;
     padding: 23px 24px 24px 24px;
     border-radius: 5px;
     box-shadow: 0 35px 50px -15px rgba(194, 195, 214, 0.5);
-    background-color:aqua;
+    background-color: #ffffff;
     display: flex;
     align-items: center;
   }
 
-  .rectangle3{
-    width: 540px;
-    height: 64px;
-    position: absolute;
-    padding: 23px 24px 24px 24px;
-    border-radius: 5px;
-    box-shadow: 0 35px 50px -15px rgba(194, 195, 214, 0.5);
-    background-color:aqua;
-    display: flex;
-    align-items: center;
-    top:65px
+.todo2{
+    top:65px;
   }
 
-  .rectangle4{
-    width: 540px;
-    height: 64px;
-    position: absolute;
-    padding: 23px 24px 24px 24px;
-    border-radius: 5px;
-    box-shadow: 0 35px 50px -15px rgba(194, 195, 214, 0.5);
-    background-color:aqua;
-    display: flex;
-    align-items: center;
+.todo3{
     top:130px
   }
 
-  .rectangle5{
-    width: 540px;
-    height: 64px;
-    position: absolute;
-    padding: 23px 24px 24px 24px;
-    border-radius: 5px;
-    box-shadow: 0 35px 50px -15px rgba(194, 195, 214, 0.5);
-    background-color:aqua;
-    display: flex;
-    align-items: center;
+  .todo4{
     top:195px
   }
 
-  .rectangle6{
-    width: 540px;
-    height: 64px;
-    position: absolute;
-    padding: 23px 24px 24px 24px;
-    border-radius: 5px;
-    box-shadow: 0 35px 50px -15px rgba(194, 195, 214, 0.5);
-    background-color:aqua;
-    display: flex;
-    align-items: center;
+  .todo5{
     top:260px
-  } */
+  }
+
+  .todotext {
+    width: 183px;
+    height: 24px;
+    border: none;
+    margin-left: 50px;
+    margin-right: 243px;
+    margin-top: 10px;
+    font-size: 18px;
+    letter-spacing: -0.25px;
+}
+  
+
+  .todocross {
+    /* display: none; */
+    width: 18px;
+    height: 18px;
+    font-size: 30px;
+    border: none;
+    position: absolute;
+    left: 505px;
+}
+
+    .todooval{
+    position: relative;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    border: solid 1px #e3e4f1;
+    margin-left: -475px 
+}
+
+    .todooval:hover {
+        cursor: pointer;
+}
+
+
+.todocheck {
+    position: absolute;
+    top: -1px;
+    left: 5px;
+    width: 15px;
+    height: 15px;
+    color: red;
+    font-size: 25px;
+    display: none;
+}
+
+.cross:hover {
+    cursor: pointer;
+}
 
 .left-clear {
     position: absolute;
@@ -251,7 +258,7 @@ cursor: pointer;
     color: #9495a5;
 }
 
-/* dark mode */
+/* dark theme */
 
 
 .dark .container {

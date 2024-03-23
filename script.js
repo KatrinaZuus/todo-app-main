@@ -11,6 +11,7 @@ let reorder = document.querySelector(".reorder")
 let all = document.querySelector(".all")
 let active = document.querySelector(".active")
 let complete = document.querySelector(".completed")
+let clearcompleted = document.querySelector(".clear-completed")
 
 
 // თემების შეცვლა
@@ -132,6 +133,8 @@ let inputField = document.querySelector(".create-a-new-todo")
                             each.oval.style.backgroundImage = "none"
                             each.completed = false
                         })
+
+                        
                         
                      // ამოშლის დროს todo-ესბი რაოდენობას ვერ ვაკლებ და ამოშლილ todo-ს შორის ადგილს ვერ ვაუქმებ
                         each.cross.addEventListener("click", ()=>{
@@ -145,9 +148,18 @@ let inputField = document.querySelector(".create-a-new-todo")
                             }     
 
                         })  
+
+                        clearcompleted.addEventListener("click", ()=>{
+                            each.check.style.display = "none"
+                            each.text.style.textDecoration = "none"
+                            each.oval.style.backgroundImage = "none"
+                            each.completed = false
+                        })
                             
                               
                     })
+
+                 
                    
 
                     // items = items + 1

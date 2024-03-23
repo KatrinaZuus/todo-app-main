@@ -71,6 +71,8 @@ body {
     border-radius: 50%;
     background-repeat: no-repeat;
     border: solid 1px #e3e4f1;
+    display: none;
+
 }
 
 .check {
@@ -86,15 +88,31 @@ body {
     height: 18px;
 }
 
+
+
+
+
 .create-a-new-todo {
     width: 183px;
     height: 24px;
-    border: none;
-    margin-left: 24px;
-    margin-right: 243px;
+    border: solid 0.5px rgb(191, 186, 186);
+    margin-left: 10px;
+    margin-right: 280px;
     /* background-color: aqua; */
     font-size: 18px;
     letter-spacing: -0.25px;
+}
+
+.edit {
+    width: 18px;
+    height: 18px;
+    border: none;
+    font-size: 15px;
+    color: black;
+    right: 70px;
+    top: 25px;
+    position: absolute;
+    display: none;
 }
 
 
@@ -129,7 +147,7 @@ body {
 
 /* რამდენიც დაემატება, იმდენჯერ top-ს უნდა დაემატოს 65px */
 
-.todo1, .todo2, .todo3, .todo4, .todo5{
+.todo {
     width: 540px;
     height: 64px;
     position: absolute;
@@ -139,23 +157,8 @@ body {
     background-color: #ffffff;
     display: flex;
     align-items: center;
-  }
+}
 
-.todo2{
-    top:65px;
-  }
-
-.todo3{
-    top:130px
-  }
-
-  .todo4{
-    top:195px
-  }
-
-  .todo5{
-    top:260px
-  }
 
   .todotext {
     width: 183px;
@@ -166,6 +169,19 @@ body {
     margin-top: 10px;
     font-size: 18px;
     letter-spacing: -0.25px;
+    /* text-decoration: line-through; */
+}
+
+.todoedit {
+    width: 18px;
+    height: 18px;
+    border: none;
+    font-size: 15px;
+    color: #9495a5;
+    right: 70px;
+    top: 25px;
+    position: absolute;
+    /* display: none; */
 }
   
 
@@ -201,7 +217,7 @@ body {
     left: 5px;
     width: 15px;
     height: 15px;
-    color: red;
+    color: #fff;
     font-size: 25px;
     display: none;
 }
@@ -218,7 +234,7 @@ body {
     display: flex;
     background-color: #fff;
     border-radius: 0 0 5px 5px;
-    top: 325px;
+    top: 65px;
     font-size: 14px;
     letter-spacing: -0.19px;
 }
@@ -252,7 +268,7 @@ cursor: pointer;
     justify-content: center;
     /* align-self: last baseline; */
     text-align: center;
-    top: 680px;
+    top: 375px;
     left: 445px;
     font-size: 14px;
     letter-spacing: -0.19px;
@@ -373,11 +389,20 @@ cursor: pointer;
         /* background-color: bisque; */
     }
 
+
+    .todo {
+        width: 327px
+    }
+
+    .todocross {
+        left: 300px
+    }
+
     .left-clear {
         width: 327px;
         padding: 16px 20px 22px 20px;
         height: 50px;
-        top: 300px;
+        top: 65px;
         font-size: 12px;
         letter-spacing: -0.17px;
     }

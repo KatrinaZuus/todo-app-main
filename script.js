@@ -87,21 +87,14 @@ let inputField = document.querySelector(".create-a-new-todo")
                 todocheck.classList.add("todocheck")
                 todooval.appendChild(todocheck)
                 todocheck.innerHTML = "v"
-
-                
+           
                 todoedit = document.createElement(`div`)
                 todoedit.classList.add("todoedit")
                 todoadd.appendChild(todoedit)
                 todoedit.innerHTML = "undo"
-                
-                
-        
-                inputField.value = ""
-                
-                // items = items + 1
-                // itemsQty.innerText = `${items}`
 
-                
+                inputField.value = ""
+                              
                 todo.push ({
                     maindiv: todoadd,
                     text: todotext,
@@ -142,7 +135,6 @@ let inputField = document.querySelector(".create-a-new-todo")
                             each.maindiv.style.display = "none"
                             each.completed = null
                             removeitem = removeitem + 1
-                            console.log(removeitem)
                             // addtop = addtop-65
                             // each.maindiv.nextSibling.style.top = `${addtop}px` 
                             }     
@@ -159,13 +151,7 @@ let inputField = document.querySelector(".create-a-new-todo")
                               
                     })
 
-                 
-                   
-
-                    // items = items + 1
-
                     itmeNumber = items - removeitem
-                    console.log(itmeNumber)
                 itemsQty.innerText = `${itmeNumber}`
 
 // todo ლისტების გაფილტვრა
@@ -197,13 +183,9 @@ let inputField = document.querySelector(".create-a-new-todo")
                         todo.filter((each)=>{
                             if (each.completed == false || each.completed == true) {
                                 each.maindiv.style.display = "flex"
-                                // each.oval.style.display = ""
                             }
                         })
                     })
-
-
-                    
 
         }
 

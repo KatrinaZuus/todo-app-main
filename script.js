@@ -32,11 +32,11 @@ let inputField = document.querySelector(".create-a-new-todo")
 
 
     let addtop = -65
-    let items = 0
     let leftCleartop = 65
     let reordertop = 375
     let containerheigth = 1024
-    let removeitem = 0
+    let items = 0
+    let removeitems = 0
 
     let todo=[]
     let todoadd=[]
@@ -108,18 +108,22 @@ let inputField = document.querySelector(".create-a-new-todo")
                     })
                     
 //  todo ლისტების მინიშვნა, აღდგენა და წაშლა
-                    
-
+    activeitems = items               
+    itemsQty.innerText = `${activeitems}`
                     // აქ გაფილტვრის და ამოშლის შემთხვევაში ვერ ვაკეთებ todo-ებს შორის მანძილი რომ გავაქრო
                     todo.map((each)=>{
                         
                         each.oval.addEventListener("click", ()=>{
+                            if (each.completed == false){
                             each.oval.style.backgroundImage = "linear-gradient(135deg, #5df, #c058f3)"
                             each.text.style.textDecoration = "line-through"
                             each.check.style.display = "block"
-                            each.text.style.color = "#d1d2da"
-                    // დარქის შემთხვევაში აქ როგორ შევცვალო სტილი?
+                            // each.text.style.color = "#d1d2da"
+                            each.text.style.opacity = "0.5"
+                            // each.text.style.color = "#494c6b"
+                    // დარქის შემთხვევაში აქ როგორ შევცვალო სტილი? ფერი რომ ვერ დავსვი opacity-ით შევცვალე
                             each.completed = true
+                            }
                         }) 
                         
                         each.edit.addEventListener("click", ()=>{
@@ -136,26 +140,33 @@ let inputField = document.querySelector(".create-a-new-todo")
                             if (each.completed == true){
                             each.maindiv.style.display = "none"
                             each.completed = null
-                            // removeitem = removeitem + 1
                             // addtop = addtop-65
-                            // each.maindiv.nextSibling.style.top = `${addtop}px` 
+                            // each.maindiv.nextSibling.style.top = `${addtop}px`
+                            
+                            removeitems = removeitems + 1
+                            activeitems = activeitems - removeitems
+                            itemsQty.innerText = `${activeitems}`  
+                            removeitems = 0 
                             }     
 
                         })  
 
                         clearcompleted.addEventListener("click", ()=>{
+                            if (each.completed == true) {
                             each.check.style.display = "none"
                             each.text.style.textDecoration = "none"
                             each.oval.style.backgroundImage = "none"
                             each.text.style.color = "#494c6b"
                             each.completed = false
-                        })
                             
-                              
+                        }
+                            each.completed = true
+
+                        })
+                             
                     })
 
-                    itmeNumber = items - removeitem
-                itemsQty.innerText = `${itmeNumber}`
+                   
 
 // todo ლისტების გაფილტვრა
                     active.addEventListener("click", ()=>{

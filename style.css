@@ -67,13 +67,14 @@ body {
 
 
 .oval {
-    position: relative;
+    position: absolute;
     width: 24px;
     height: 24px;
     border-radius: 50%;
     background-repeat: no-repeat;
     border: solid 1px #e3e4f1;
-    display: none;
+    /* display: none; */
+    /* margin-left: 5px; */
 
 }
 
@@ -88,6 +89,8 @@ body {
 .cross {
     width: 18px;
     height: 18px;
+    margin-left: -100px;
+   
 }
 
 
@@ -95,14 +98,15 @@ body {
 
 
 .create-a-new-todo {
-    width: 183px;
+    width: 550px;
     height: 24px;
     border: solid 0.5px rgb(191, 186, 186);
-    margin-left: 10px;
+    margin-left: 50px;
     margin-right: 280px;
-    font-size: 18px;
+    font-size: 16px;
     letter-spacing: -0.25px;
     color: #393a4b;
+    padding: 0 5px;
 }
 
 .edit {
@@ -317,10 +321,14 @@ cursor: pointer;
 }
 
 .dark .todo,
-.dark .rectangle,
+/* .dark .rectangle, */
 .dark .create-a-new-todo,
 .dark .todotext {
     color: #c8cbe7;
+}
+
+.dark .todotext:hover {
+    color: #5b5e7e;
 }
 
 .dark .left-clear,
@@ -337,16 +345,16 @@ cursor: pointer;
 
 
 
-@media screen and (max-width: 415px) {
+@media (max-width: 375px) {
 
     .container {
-        width: 415px;
+        width: 375px;
         height: 933px;
     }
     .bg {
         background-image: url(./images/bg-mobile-light.jpg);
         background-repeat: no-repeat;
-        width: 415px;
+        width: 375px;
         height: 200px;
         padding: 48px 24px 132px 26px;
     }
@@ -371,12 +379,13 @@ cursor: pointer;
         height: 50px;
         top: 108px;
         left: 24px;
-        padding: 18px 20px;
+        padding: 18px 25px;
     }
 
     .oval {
         width: 20px;
         height: 20px;
+        /* margin-left: ; */
     } 
 
     .check {
@@ -388,17 +397,18 @@ cursor: pointer;
     } 
 
     .create-a-new-todo {
-        width: 122px;
-        height: 12px;
-        margin-left: 12px;
+        width: 200px;
+        height: 22px;
+        margin-left: 40px;
         margin-right: 120px;
-        font-size: 12px;
+        font-size: 18px;
         letter-spacing: -0.17;
     }
 
     .cross {
         width: 12px;
         height: 12px;
+        margin-left: -80px;
     }
 
     .line, .todo {
@@ -418,6 +428,11 @@ cursor: pointer;
         left: 300px
     }
 
+    .todoedit {
+        right: 50px;
+    }
+   
+
     .left-clear {
         width: 327px;
         padding: 16px 20px 22px 20px;
@@ -436,7 +451,7 @@ cursor: pointer;
         width: 327px;
         height: 50px;
         position: absolute;
-        left: -45px;
+        left: -60px;
         top: 66px;
         background-color: #ffffff;
         padding: 15px 80px 19px 81px;

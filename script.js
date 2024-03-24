@@ -13,7 +13,6 @@ let active = document.querySelector(".active")
 let complete = document.querySelector(".completed")
 let clearcompleted = document.querySelector(".clear-completed")
 
-
 // თემების შეცვლა
 moon.addEventListener("click", ()=>{
     bodythemeColor.classList.add("dark")
@@ -27,16 +26,13 @@ let itemsQty = document.querySelector(".items-qty")
 let inputField = document.querySelector(".create-a-new-todo")
 
 
-
-
-
-
     let addtop = -65
     let leftCleartop = 65
     let reordertop = 375
     let containerheigth = 1024
     let items = 0
     let removeitems = 0
+    let newtop
 
     let todo=[]
     let todoadd=[]
@@ -65,8 +61,7 @@ let inputField = document.querySelector(".create-a-new-todo")
                 listOfTodo.appendChild(todoadd)
                 addtop = addtop+65
                 todoadd.style.top = `${addtop}px`
-                
-                
+              
                 todotext = document.createElement(`div`)
                 todotext.classList.add("todotext")
                 todoadd.appendChild(todotext)
@@ -77,7 +72,6 @@ let inputField = document.querySelector(".create-a-new-todo")
                 todoadd.appendChild(todocross)
                 // აქ როგორ დავამატო img?? "X" არ მომწონს
                 todocross.innerHTML = "X"
-
 
                 todooval = document.createElement(`div`)
                 todooval.classList.add("todooval")
@@ -103,8 +97,7 @@ let inputField = document.querySelector(".create-a-new-todo")
                     oval: todooval,
                     check: todocheck,
                     completed: false,
-                    deleted: false,
-                    
+                    deleted: false,  
                     })
                     
 //  todo ლისტების მინიშვნა, აღდგენა და წაშლა
@@ -120,29 +113,58 @@ let inputField = document.querySelector(".create-a-new-todo")
                             each.check.style.display = "block"
                             // each.text.style.color = "#d1d2da"
                             each.text.style.opacity = "0.5"
+                            
                             // each.text.style.color = "#494c6b"
                     // დარქის შემთხვევაში აქ როგორ შევცვალო სტილი? ფერი რომ ვერ დავსვი opacity-ით შევცვალე
                             each.completed = true
-                            }
+                            } 
+
+                    // იმავე ღილაკზე დაჭერით მიდოდა მონიშვნის მოხსნა, მაგრამ ერთის გამოტოვებით მუშაობს
+                            // else {
+
+                            // if (each.completed == true){
+                            //     each.oval.style.backgroundImage = "none"
+                            //     each.text.style.textDecoration = "none"
+                            //     each.check.style.display = "none"
+                            //     // each.text.style.color = "#d1d2da"
+                            //     each.text.style.opacity = "1"
+                            //     each.completed = false
+                            // }
+                            // }
                         }) 
                         
                         each.edit.addEventListener("click", ()=>{
+                            if (each.completed = true){
                             each.check.style.display = "none"
                             each.text.style.textDecoration = "none"
                             each.oval.style.backgroundImage = "none"
+                            each.text.style.opacity = "1"
                             each.completed = false
+                            }
                         })
-
-                        
-                        
+ 
                      // ამოშლის დროს todo-ესბი რაოდენობას ვერ ვაკლებ და ამოშლილ todo-ს შორის ადგილს ვერ ვაუქმებ
                         each.cross.addEventListener("click", ()=>{
                             if (each.completed == true){
                             each.maindiv.style.display = "none"
                             each.completed = null
-                            // addtop = addtop-65
-                            // each.maindiv.nextSibling.style.top = `${addtop}px`
                             
+                            console.log(todo.length)
+                            let top = -65
+                            for (i=0; i<=todo.length; i++){
+                                each.maindiv.nextElementSibling.style.top = `${top}px`
+                                top = top + 65
+                            
+                            // currentTop = each.maindiv.style.top
+                            // console.log(currentTop)
+                            // currentTopValue = parseInt(currentTop.replace(`px`), ``)
+                            // console.log(currentTopValue)
+                            // newTopValue = currentTopValue - 65
+                            // console.log(newTopValue)
+                            // console.log(each.maindiv[i])
+                            }
+                            // each.maindiv.nextElementSibling.style.top = newTopValue + `px`
+
                             removeitems = removeitems + 1
                             activeitems = activeitems - removeitems
                             itemsQty.innerText = `${activeitems}`  
@@ -162,11 +184,8 @@ let inputField = document.querySelector(".create-a-new-todo")
                         }
                             each.completed = true
 
-                        })
-                             
+                        })                             
                     })
-
-                   
 
 // todo ლისტების გაფილტვრა
                     active.addEventListener("click", ()=>{
@@ -192,7 +211,6 @@ let inputField = document.querySelector(".create-a-new-todo")
                         })
                     })
 
-
                     all.addEventListener("click", ()=>{
                         todo.filter((each)=>{
                             if (each.completed == false || each.completed == true) {
@@ -200,10 +218,10 @@ let inputField = document.querySelector(".create-a-new-todo")
                             }
                         })
                     })
-
         }
 
     })
+
 
 
 

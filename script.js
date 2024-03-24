@@ -182,7 +182,6 @@ let inputField = document.querySelector(".create-a-new-todo")
                             each.completed = false
                             
                         }
-                            each.completed = true
 
                         })                             
                     })

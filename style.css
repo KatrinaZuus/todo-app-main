@@ -26,6 +26,8 @@ body {
     display: flex;
     padding: 70px 449px 190px 450px;
 }
+
+
 .title {
     display: flex;
     gap: 290px
@@ -98,9 +100,9 @@ body {
     border: solid 0.5px rgb(191, 186, 186);
     margin-left: 10px;
     margin-right: 280px;
-    /* background-color: aqua; */
     font-size: 18px;
     letter-spacing: -0.25px;
+    color: #393a4b;
 }
 
 .edit {
@@ -115,13 +117,6 @@ body {
     display: none;
 }
 
-
-/* ეს ჰოვერი დაედოს დამატებულზე */
-/* .create-a-new-todo { */
-    /* cursor: pointer; */
-/* } */
-
-/* ახალი რომ დაემატება color-ს ფერი მიეცეს */
 .line {
     /* display: none; */
     position: absolute;
@@ -170,6 +165,7 @@ body {
     font-size: 18px;
     letter-spacing: -0.25px;
     /* text-decoration: line-through; */
+    color:#494c6b ;
 }
 
 .todoedit {
@@ -222,7 +218,8 @@ body {
     display: none;
 }
 
-.cross:hover {
+.todocross:hover,
+.todoedit:hover {
     cursor: pointer;
 }
 
@@ -237,17 +234,22 @@ body {
     top: 65px;
     font-size: 14px;
     letter-spacing: -0.19px;
+    color: #9495a5;
 }
 
-.left {
-    margin-left: 5px;
+
+
+
+
+.items-qty {
+    margin-right: 20px;
 }
 
 .all-active-completed {
 display: flex;
-margin-left: 96px;
-margin-right: 56px;
-gap: 19px;
+margin-left: 60px;
+margin-right: 80px;
+gap: 15px;
 font-weight: bold;
 color: #9495a5;
 }
@@ -259,6 +261,12 @@ color: #9495a5;
 .all, .active, 
 .completed, .clear-completed:hover{
 cursor: pointer;
+}
+
+.active:hover, 
+.completed:hover, 
+.clear-completed:hover {
+    color: #494c6b
 }
 
 .reorder {
@@ -277,7 +285,6 @@ cursor: pointer;
 
 /* dark theme */
 
-
 .dark .container {
     background-color: #171823;
 }
@@ -288,7 +295,9 @@ cursor: pointer;
 
 .dark .rectangle, 
 .dark .left-clear,
-.dark .create-a-new-todo {
+.dark .create-a-new-todo,
+.dark .todo,
+.dark .all-active-completed {
     background-color: #25273d;
 }
 
@@ -307,21 +316,37 @@ cursor: pointer;
     display: block;
 }
 
+.dark .todo,
+.dark .rectangle,
+.dark .create-a-new-todo,
+.dark .todotext {
+    color: #c8cbe7;
+}
+
+.dark .left-clear,
+.dark .all-active-completed{
+    color: #5b5e7e
+}
+
+.dark .active:hover,
+.dark .completed:hover,
+.dark .clear-completed:hover{
+    color: #e3e4f1
+}
 
 
 
 
-
-@media screen and (max-width: 376px) {
+@media screen and (max-width: 380px) {
 
     .container {
-        width: 376px;
+        width: 380px;
         /* height: 933px; */
     }
     .bg {
         background-image: url(./images/bg-mobile-light.jpg);
         background-repeat: no-repeat;
-        width: 376px;
+        width: 380px;
         height: 200px;
         padding: 48px 24px 132px 26px;
     }
@@ -403,14 +428,15 @@ cursor: pointer;
     }
 
     .left {
-        margin-right: 138px;
+        margin-right: 100px;
     }
+
 
     .all-active-completed {
         width: 327px;
         height: 50px;
         position: absolute;
-        left: -95px;
+        left: -45px;
         top: 66px;
         background-color: #ffffff;
         padding: 15px 80px 19px 81px;

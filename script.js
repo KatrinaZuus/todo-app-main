@@ -91,7 +91,7 @@ let inputField = document.querySelector(".create-a-new-todo")
                 todoedit = document.createElement(`div`)
                 todoedit.classList.add("todoedit")
                 todoadd.appendChild(todoedit)
-                todoedit.innerHTML = "undo"
+                todoedit.innerHTML = "edit"
 
                 inputField.value = ""
                               
@@ -117,6 +117,8 @@ let inputField = document.querySelector(".create-a-new-todo")
                             each.oval.style.backgroundImage = "linear-gradient(135deg, #5df, #c058f3)"
                             each.text.style.textDecoration = "line-through"
                             each.check.style.display = "block"
+                            each.text.style.color = "#d1d2da"
+                    // დარქის შემთხვევაში აქ როგორ შევცვალო სტილი?
                             each.completed = true
                         }) 
                         
@@ -134,7 +136,7 @@ let inputField = document.querySelector(".create-a-new-todo")
                             if (each.completed == true){
                             each.maindiv.style.display = "none"
                             each.completed = null
-                            removeitem = removeitem + 1
+                            // removeitem = removeitem + 1
                             // addtop = addtop-65
                             // each.maindiv.nextSibling.style.top = `${addtop}px` 
                             }     
@@ -145,6 +147,7 @@ let inputField = document.querySelector(".create-a-new-todo")
                             each.check.style.display = "none"
                             each.text.style.textDecoration = "none"
                             each.oval.style.backgroundImage = "none"
+                            each.text.style.color = "#494c6b"
                             each.completed = false
                         })
                             

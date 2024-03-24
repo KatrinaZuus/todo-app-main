@@ -12,6 +12,9 @@ let all = document.querySelector(".all")
 let active = document.querySelector(".active")
 let complete = document.querySelector(".completed")
 let clearcompleted = document.querySelector(".clear-completed")
+let editText = document.querySelector(".edit-text")
+let alertText = document.querySelector(".alert-text")
+let alert = document.querySelector(".alert")
 
 // თემების შეცვლა
 moon.addEventListener("click", ()=>{
@@ -97,7 +100,7 @@ let inputField = document.querySelector(".create-a-new-todo")
                     oval: todooval,
                     check: todocheck,
                     completed: false,
-                    deleted: false,  
+                    changed: false,  
                     })
                     
 //  todo ლისტების მინიშვნა, აღდგენა და წაშლა
@@ -105,37 +108,29 @@ let inputField = document.querySelector(".create-a-new-todo")
     itemsQty.innerText = `${activeitems}`
                     // აქ გაფილტვრის და ამოშლის შემთხვევაში ვერ ვაკეთებ todo-ებს შორის მანძილი რომ გავაქრო
                     todo.map((each)=>{
-                        
                         each.oval.addEventListener("click", ()=>{
                             if (each.completed == false){
-                            each.oval.style.backgroundImage = "linear-gradient(135deg, #5df, #c058f3)"
-                            each.text.style.textDecoration = "line-through"
-                            each.check.style.display = "block"
-                            // each.text.style.color = "#d1d2da"
-                            each.text.style.opacity = "0.5"
-                            each.completed = true
-                            
+                                each.oval.style.backgroundImage = "linear-gradient(135deg, #5df, #c058f3)"
+                                each.text.style.textDecoration = "line-through"
+                                each.check.style.display = "block"
+                                each.text.style.opacity = "0.5"
+                                each.completed = true
+
                             // each.text.style.color = "#494c6b"
-                    // დარქის შემთხვევაში აქ როგორ შევცვალო სტილი? ფერი რომ ვერ დავსვი opacity-ით შევცვალე
+                            // დარქის შემთხვევაში აქ როგორ შევცვალო სტილი? ფერი რომ ვერ დავსვი opacity-ით შევცვალე
                             
+                            // იმავე ღილაკზე დაჭერით მიდოდა მონიშვნის მოხსნა, მაგრამ ერთის გამოტოვებით მუშაობს
+                                    // if (each.completed == true){
+                                    //      each.oval.style.backgroundImage = "none"
+                                    //      each.text.style.textDecoration = "none"
+                                    //      each.check.style.display = "none"
+                                    //      each.text.style.opacity = "1"
+                                    //      each.completed = false
+                                    // } 
                             } 
+                        })
 
-                    // იმავე ღილაკზე დაჭერით მიდოდა მონიშვნის მოხსნა, მაგრამ ერთის გამოტოვებით მუშაობს
-                            // else {
-
-                            // if (each.completed == true){
-                            //     each.oval.style.backgroundImage = "none"
-                            //     each.text.style.textDecoration = "none"
-                            //     each.check.style.display = "none"
-                            //     // each.text.style.color = "#d1d2da"
-                            //     each.text.style.opacity = "1"
-                            //     each.completed = false
-                            // }
-                            // }
-                            console.log(each.completed)
-                        }) 
-                        
-                        each.edit.addEventListener("click", ()=>{
+                           each.edit.addEventListener("click", ()=>{
                             if (each.completed == true){
                             each.check.style.display = "none"
                             each.text.style.textDecoration = "none"
@@ -143,7 +138,6 @@ let inputField = document.querySelector(".create-a-new-todo")
                             each.text.style.opacity = "1"
                             each.completed = false
                             }
-                            
                         })
  
                      // ამოშლის დროს todo-ესბი რაოდენობას ვერ ვაკლებ და ამოშლილ todo-ს შორის ადგილს ვერ ვაუქმებ
@@ -165,9 +159,36 @@ let inputField = document.querySelector(".create-a-new-todo")
                             activeitems = activeitems - removeitems
                             itemsQty.innerText = `${activeitems}`  
                             removeitems = 0 
-                            }     
+                            }
+                        }) 
+                         
+                        each.text.addEventListener("click", ()=>{
+                            if (each.changed == false){
+                            container.style.opacity = "0.5"
+                            alert.style.display = "flex"
+                            alertText.style.display = "block"
+                            editText.style.display = "block"
+                            alertText.value = each.text.innerText
+                            each.chenged = true
+                            }
+                        
+                         
+                            editText.addEventListener("click", ()=>{
+                                console.log(each.text.innerText)
+                                each.text.innerText = alertText.value
+                                alert.style.display = "none"
+                                alertText.style.display = "none"
+                                editText.style.display = "none"
+                                container.style.opacity = "1"
+                         })
+                            })
+                        
 
-                        })  
+                            // each.check.style.display = "none"
+                            // each.text.style.textDecoration = "none"
+                            // each.oval.style.backgroundImage = "none"
+                            // each.text.style.opacity = "1"
+                        
 
                         clearcompleted.addEventListener("click", ()=>{
                             if (each.completed == true) {
@@ -176,11 +197,11 @@ let inputField = document.querySelector(".create-a-new-todo")
                             each.oval.style.backgroundImage = "none"
                             each.text.style.opacity = "1"
                             each.completed = false
-                            console.log(each.completed)
-                        }
-
-                        })                             
-                    })
+                            }
+                        })  
+                        
+                    })  
+                     
 
 // todo ლისტების გაფილტვრა
                     active.addEventListener("click", ()=>{

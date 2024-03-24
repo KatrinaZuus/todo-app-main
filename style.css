@@ -122,17 +122,14 @@ body {
 }
 
 .line {
-    /* display: none; */
     position: absolute;
     width: 540px;
     height: 1px;
     top: 64px;
     left: 1px;
     background-color: none;
-    /* background-color: #e3e4f1; */
 }
 
-/* ახალი რომ დაემატება ჩრდილი გააქტიურდეს */
 .list-of-todo {
     position: absolute;
     width: 540px;
@@ -188,8 +185,7 @@ body {
   .todocross {
     /* display: none; */
     width: 18px;
-    height: 18px;
-    font-size: 30px;
+    height: 10px;
     border: none;
     position: absolute;
     left: 505px;
@@ -285,6 +281,45 @@ cursor: pointer;
     font-size: 14px;
     letter-spacing: -0.19px;
     color: #9495a5;
+}
+
+.alert{
+    display: none;
+    position: absolute;
+    width: 600px;
+    height: 300px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    top: 270px;
+    left: 420px;
+    background-color:rgb(41, 15, 65);
+    color: #494c6b;
+    border-radius: 10px;
+    font-size: 18px;
+   
+
+}
+
+.edit-text, .alert-text {
+    position: absolute;
+    width: 450px;
+    height: 50px;
+    display: none;
+    background-color:azure;
+    color: #494c6b;
+    border-radius: 10px;
+    font-size: 18px;
+    top: 50px;
+    padding: 0 10px;
+    
+}
+
+.edit-text {
+    top: 130px;
+    width: 200px;
+    height: 30px;
+    padding-top: 7px;
 }
 
 /* dark theme */
@@ -425,7 +460,7 @@ cursor: pointer;
     }
 
     .todocross {
-        left: 300px
+        left: 300px;
     }
 
     .todoedit {

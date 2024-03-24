@@ -312,16 +312,16 @@ cursor: pointer;
 
 
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 376px) {
 
     .container {
-        width: 375px;
+        width: 376px;
         /* height: 933px; */
     }
     .bg {
         background-image: url(./images/bg-mobile-light.jpg);
         background-repeat: no-repeat;
-        width: 375px;
+        width: 376px;
         height: 200px;
         padding: 48px 24px 132px 26px;
     }
@@ -376,7 +376,7 @@ cursor: pointer;
         height: 12px;
     }
 
-    .line {
+    .line, .todo {
         width: 327px;
     }
 
@@ -387,11 +387,6 @@ cursor: pointer;
         margin-left: 24px;
         color: #9495a5;
         /* background-color: bisque; */
-    }
-
-
-    .todo {
-        width: 327px
     }
 
     .todocross {

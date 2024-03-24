@@ -178,7 +178,7 @@ let inputField = document.querySelector(".create-a-new-todo")
                             each.check.style.display = "none"
                             each.text.style.textDecoration = "none"
                             each.oval.style.backgroundImage = "none"
-                            each.text.style.color = "#494c6b"
+                            each.text.style.opacity = "1"
                             each.completed = false
                             
                         }

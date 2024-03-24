@@ -7,7 +7,7 @@
 }
 
 body {
-    max-width: 1440px;
+    /* max-width: 100%; */
     font-family: Josefin Sans;
     height: 100vh;
 }
@@ -337,16 +337,16 @@ cursor: pointer;
 
 
 
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 370px) {
 
     .container {
-        width: 380px;
-        /* height: 933px; */
+        width: 370px;
+        height: 933px;
     }
     .bg {
         background-image: url(./images/bg-mobile-light.jpg);
         background-repeat: no-repeat;
-        width: 380px;
+        width: 370px;
         height: 200px;
         padding: 48px 24px 132px 26px;
     }

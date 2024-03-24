@@ -113,10 +113,11 @@ let inputField = document.querySelector(".create-a-new-todo")
                             each.check.style.display = "block"
                             // each.text.style.color = "#d1d2da"
                             each.text.style.opacity = "0.5"
+                            each.completed = true
                             
                             // each.text.style.color = "#494c6b"
                     // დარქის შემთხვევაში აქ როგორ შევცვალო სტილი? ფერი რომ ვერ დავსვი opacity-ით შევცვალე
-                            each.completed = true
+                            
                             } 
 
                     // იმავე ღილაკზე დაჭერით მიდოდა მონიშვნის მოხსნა, მაგრამ ერთის გამოტოვებით მუშაობს
@@ -131,16 +132,18 @@ let inputField = document.querySelector(".create-a-new-todo")
                             //     each.completed = false
                             // }
                             // }
+                            console.log(each.completed)
                         }) 
                         
                         each.edit.addEventListener("click", ()=>{
-                            if (each.completed = true){
+                            if (each.completed == true){
                             each.check.style.display = "none"
                             each.text.style.textDecoration = "none"
                             each.oval.style.backgroundImage = "none"
                             each.text.style.opacity = "1"
                             each.completed = false
                             }
+                            
                         })
  
                      // ამოშლის დროს todo-ესბი რაოდენობას ვერ ვაკლებ და ამოშლილ todo-ს შორის ადგილს ვერ ვაუქმებ
@@ -149,12 +152,6 @@ let inputField = document.querySelector(".create-a-new-todo")
                             each.maindiv.style.display = "none"
                             each.completed = null
                             
-                            console.log(todo.length)
-                            let top = -65
-                            for (i=0; i<=todo.length; i++){
-                                each.maindiv.nextElementSibling.style.top = `${top}px`
-                                top = top + 65
-                            
                             // currentTop = each.maindiv.style.top
                             // console.log(currentTop)
                             // currentTopValue = parseInt(currentTop.replace(`px`), ``)
@@ -162,7 +159,6 @@ let inputField = document.querySelector(".create-a-new-todo")
                             // newTopValue = currentTopValue - 65
                             // console.log(newTopValue)
                             // console.log(each.maindiv[i])
-                            }
                             // each.maindiv.nextElementSibling.style.top = newTopValue + `px`
 
                             removeitems = removeitems + 1
@@ -180,7 +176,7 @@ let inputField = document.querySelector(".create-a-new-todo")
                             each.oval.style.backgroundImage = "none"
                             each.text.style.opacity = "1"
                             each.completed = false
-                            
+                            console.log(each.completed)
                         }
 
                         })                             
@@ -220,11 +216,11 @@ let inputField = document.querySelector(".create-a-new-todo")
         }
 
     })
-// 
-    // bh
 
 
 
+
+    // ,
 
 
 

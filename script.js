@@ -162,6 +162,8 @@ let inputField = document.querySelector(".create-a-new-todo")
                             }
                         }) 
                          
+                    // აქ მინდოდა ჩანაწერზე დაკლიკებისას გამოეტანა ფანჯარა, სადაც შევცვლიდი მონაცემს და დავაბრუნებდი შეცვლილს
+                    // მაგრამ მეორე ან მესამეს რომ ვცვლი, წინასაც მიცვლის
                         each.text.addEventListener("click", ()=>{
                             if (each.changed == false){
                             container.style.opacity = "0.5"

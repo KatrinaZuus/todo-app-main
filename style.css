@@ -98,7 +98,7 @@ body {
 
 
 .create-a-new-todo {
-    width: 550px;
+    width: 400px;
     height: 24px;
     border: solid 0.5px rgb(191, 186, 186);
     margin-left: 50px;
@@ -167,6 +167,10 @@ body {
     letter-spacing: -0.25px;
     /* text-decoration: line-through; */
     color:#494c6b;
+}
+
+.todotext:hover {
+    cursor: pointer;
 }
 
 .todoedit {
@@ -362,9 +366,6 @@ cursor: pointer;
     color: #c8cbe7;
 }
 
-.dark .todotext:hover {
-    color: #5b5e7e;
-}
 
 .dark .left-clear,
 .dark .all-active-completed{

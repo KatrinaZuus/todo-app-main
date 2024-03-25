@@ -120,7 +120,7 @@ let inputField = document.querySelector(".create-a-new-todo")
                             // დარქის შემთხვევაში აქ როგორ შევცვალო სტილი? ფერი რომ ვერ დავსვი opacity-ით შევცვალე
                             
                             // იმავე ღილაკზე დაჭერით მიდოდა მონიშვნის მოხსნა, მაგრამ ერთის გამოტოვებით მუშაობს,
-                            // ამიტომ მონიშვნის მოხსნა edit-ზე დავსვი
+                            // ამიტომ მონიშვნის მოხსნა undo-ზე დავსვი
                                     // if (each.completed == true){
                                     //      each.oval.style.backgroundImage = "none"
                                     //      each.text.style.textDecoration = "none"

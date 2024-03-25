@@ -33,7 +33,7 @@ let inputField = document.querySelector(".create-a-new-todo")
     let leftCleartop = 65
     let reordertop = 375
     let containerheigth = 1024
-    let items = 0
+    let activeitems = 0
     let removeitems = 0
     let newtop
 
@@ -49,7 +49,8 @@ let inputField = document.querySelector(".create-a-new-todo")
         inputField.addEventListener('keypress', function (e) {
             
             if (e.key === 'Enter' && inputField.value !== "") {
-                items = items + 1
+                // items = items + 1
+                activeitems = activeitems + 1
                 leftCleartop = leftCleartop + 65 
                 leftClear.style.top = `${leftCleartop}px`
 
@@ -104,7 +105,7 @@ let inputField = document.querySelector(".create-a-new-todo")
                     })
                     
 //  todo ლისტების მინიშვნა, აღდგენა და წაშლა
-    activeitems = items               
+    // activeitems = items               
     itemsQty.innerText = `${activeitems}`
                     // აქ გაფილტვრის და ამოშლის შემთხვევაში ვერ ვაკეთებ todo-ებს შორის მანძილი რომ გავაქრო
                     todo.map((each)=>{

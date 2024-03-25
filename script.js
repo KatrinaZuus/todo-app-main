@@ -49,7 +49,7 @@ let inputField = document.querySelector(".create-a-new-todo")
         inputField.addEventListener('keypress', function (e) {
             
             if (e.key === 'Enter' && inputField.value !== "") {
-                // items = items + 1
+
                 activeitems = activeitems + 1
                 leftCleartop = leftCleartop + 65 
                 leftClear.style.top = `${leftCleartop}px`
@@ -105,7 +105,7 @@ let inputField = document.querySelector(".create-a-new-todo")
                     })
                     
 //  todo ლისტების მინიშვნა, აღდგენა და წაშლა
-    // activeitems = items               
+
     itemsQty.innerText = `${activeitems}`
                     // აქ გაფილტვრის და ამოშლის შემთხვევაში ვერ ვაკეთებ todo-ებს შორის მანძილი რომ გავაქრო
                     todo.map((each)=>{
@@ -172,7 +172,6 @@ let inputField = document.querySelector(".create-a-new-todo")
                             each.completed = false
                             }
                         })
-
                     })
 // todo ჩანაწერის ცვლილება  
                     todo.filter((each)=>{

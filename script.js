@@ -161,29 +161,38 @@ let inputField = document.querySelector(".create-a-new-todo")
                             removeitems = 0 
                             }
                         }) 
+
+                    })
                          
                     // აქ მინდოდა ჩანაწერზე დაკლიკებისას გამოეტანა ფანჯარა, სადაც შევცვლიდი მონაცემს და დავაბრუნებდი შეცვლილს
                     // მაგრამ მეორე ან მესამეს რომ ვცვლი, წინასაც მიცვლის
+                    todo.filter((each)=>{
                         each.text.addEventListener("click", ()=>{
-                            if (each.changed == false){
+                            console.log(each.changed)
+                            console.log(each.text.innerText)
+                            if ( each.changed == false){
+                            each.changed = true
                             container.style.opacity = "0.5"
                             alert.style.display = "flex"
                             alertText.style.display = "block"
                             editText.style.display = "block"
                             alertText.value = each.text.innerText
-                            each.chenged = true
                             }
-                        
-                         
+
                             editText.addEventListener("click", ()=>{
-                                console.log(each.text.innerText)
+
+                                if (each.changed == true){
                                 each.text.innerText = alertText.value
                                 alert.style.display = "none"
                                 alertText.style.display = "none"
                                 editText.style.display = "none"
                                 container.style.opacity = "1"
-                         })
+                                each.changed = false
+                                }
                             })
+                            })
+
+                        })
                         
 
                             // each.check.style.display = "none"
@@ -202,7 +211,7 @@ let inputField = document.querySelector(".create-a-new-todo")
                             }
                         })  
                         
-                    })  
+                    
                      
 
 // todo ლისტების გაფილტვრა
